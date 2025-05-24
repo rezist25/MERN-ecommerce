@@ -232,7 +232,11 @@ const Home = () => {
                       </div>
                       <div className="product-image">
                         <img
-                          src={item?.images[0]?.url}
+                          src={
+                            item?.images && item.images.length > 0 && item.images[0].url
+                              ? item.images[0].url
+                              : "images/watch.jpg"
+                          }
                           //className="img-fluid d"
                           alt="product image"
                           height={"250px"}
@@ -240,7 +244,11 @@ const Home = () => {
                           onClick={() => navigate("/product/" + item?._id)}
                         />
                         <img
-                          src={item?.images[0]?.url}
+                          src={
+                            item?.images && item.images.length > 0 && item.images[0].url
+                              ? item.images[0].url
+                              : "images/watch.jpg"
+                          }
                           //className="img-fluid d"
                           alt="product image"
                           height={"250px"}
@@ -361,17 +369,21 @@ const Home = () => {
               if (item.tags === "special") {
                 //console.log(item?._id);
                 return (
-                  <SpecialProduct
-                    key={index}
-                    id={item?._id}
-                    title={item?.title}
-                    brand={item?.brand}
-                    totalrating={item?.totalrating.toString()}
-                    price={item?.price}
-                    img={item?.images[0].url}
-                    sold={item?.sold}
-                    quantity={item?.quantity}
-                  />
+                    <SpecialProduct
+                      key={index}
+                      id={item?._id}
+                      title={item?.title}
+                      brand={item?.brand}
+                      totalrating={item?.totalrating.toString()}
+                      price={item?.price}
+                      img={
+                        item?.images && item.images.length > 0 && item.images[0].url
+                          ? item.images[0].url
+                          : "images/watch.jpg"
+                      }
+                      sold={item?.sold}
+                      quantity={item?.quantity}
+                    />
                 );
               }
             })}
@@ -403,7 +415,11 @@ const Home = () => {
                       </div>
                       <div className="product-image">
                         <img
-                          src={item?.images[0].url}
+                          src={
+                            item?.images && item.images.length > 0 && item.images[0].url
+                              ? item.images[0].url
+                              : "images/watch.jpg"
+                          }
                           // className="img-fluid d"
                           alt="product image"
                           height={"250px"}
@@ -411,7 +427,11 @@ const Home = () => {
                           onClick={() => navigate("/product/" + item?._id)}
                         />
                         <img
-                          src={item?.images[0].url}
+                          src={
+                            item?.images && item.images.length > 0 && item.images[0].url
+                              ? item.images[0].url
+                              : "images/watch.jpg"
+                          }
                           // className="img-fluid d"
                           alt="product image"
                           height={"250px"}
@@ -505,15 +525,19 @@ const Home = () => {
               if (index < 4) {
                 return (
                   <div className="col-3 " key={index}>
-                    <BlogCard
-                      id={item?._id}
-                      title={item?.title}
-                      description={item?.description}
-                      image={item?.images[0]?.url}
-                      date={moment(item?.createdAt).format(
-                        "MMMM Do YYYY, h:mm a"
-                      )}
-                    />
+                      <BlogCard
+                        id={item?._id}
+                        title={item?.title}
+                        description={item?.description}
+                        image={
+                          item?.images && item.images.length > 0 && item.images[0].url
+                            ? item.images[0].url
+                            : "images/watch.jpg"
+                        }
+                        date={moment(item?.createdAt).format(
+                          "MMMM Do YYYY, h:mm a"
+                        )}
+                      />
                   </div>
                 );
               }

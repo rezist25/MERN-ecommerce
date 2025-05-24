@@ -46,8 +46,8 @@ const Wishlist = () => {
                     <div className="wishlist-card-image">
                       <img
                         src={
-                          item?.images[0].url
-                            ? item?.images[0].url
+                          item?.images && item.images.length > 0 && item.images[0].url
+                            ? item.images[0].url
                             : "images/watch.jpg"
                         }
                         className="img-fluid w-100"

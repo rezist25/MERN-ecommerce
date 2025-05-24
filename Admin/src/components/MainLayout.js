@@ -189,7 +189,7 @@ const MainLayout = () => {
                 <img
                   width={32}
                   height={32}
-                  src="https://stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/images/customers/customer-4-64x64.jpg"
+                 // src="admin pic"
                   alt=""
                 />
               </div>
@@ -199,8 +199,8 @@ const MainLayout = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <h5 className="mb-0">Dev</h5>
-                <p className="mb-0">devjariwala8444@gmail.com</p>
+                <h5 className="mb-0">magicmushroom</h5>
+               
               </div>
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li>
